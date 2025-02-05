@@ -9,6 +9,4 @@
   <%= button_to "Destroy this product card", @product_card, method: :delete %>
 </div>
 
-<% if @product_card.image.attached? %>
-  <%= image_tag @product_card.image, width: 300 %>
-<% end %>
+
