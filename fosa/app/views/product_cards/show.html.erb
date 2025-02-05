@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @product_card %>
+
+<div>
+  <%= link_to "Edit this product card", edit_product_card_path(@product_card) %> |
+  <%= link_to "Back to product cards", product_cards_path %>
+
+  <%= button_to "Destroy this product card", @product_card, method: :delete %>
+</div>
+
+<% if @product_card.image.attached? %>
+  <%= image_tag @product_card.image, width: 300 %>
+<% end %>

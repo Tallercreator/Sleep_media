@@ -1,0 +1,18 @@
+<h1>Все товары</h1>
+
+<% @product_cards.each do |product_card| %>
+  <div class="product-card">
+    <h2><%= link_to product_card.title, product_card_path(product_card) %></h2>
+
+    <p><%= truncate(product_card.description, length: 100) %></p>
+
+    <% if product_card.image.attached? %>
+      <%= image_tag product_card.image, width: 200, alt: product_card.title %>
+
+    <% else %>
+      <p><em>Нет изображения</em></p>
+    <% end %>
+  </div>
+<% end %>
+
+<%= link_to "New Product Card", new_product_card_path %>

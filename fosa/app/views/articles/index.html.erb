@@ -1,16 +1,17 @@
-<p style="color: green"><%= notice %></p>
+<h1>Все статьи</h1>
 
-<% content_for :title, "Articles" %>
+<% @articles.each do |article| %>
+  <div class="article-item">
+    <h2><%= link_to article.title, article_path(article) %></h2>
 
-<h1>Articles</h1>
+    <p><%= truncate(article.content, length: 100) %></p>
 
-<div id="articles">
-  <% @articles.each do |article| %>
-    <%= render article %>
-    <p>
-      <%= link_to "Show this article", article %>
-    </p>
-  <% end %>
-</div>
+    <% if article.image.attached? %>
+      <%= image_tag article.image, width: 200, alt: article.title %>
+    <% else %>
+      <p><em>Нет изображения</em></p>
+    <% end %>
+  </div>
+<% end %>
 
-<%= link_to "New article", new_article_path %>
+<%= link_to "New Article", new_article_path %>

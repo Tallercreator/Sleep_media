@@ -1,0 +1,2 @@
+module ProductCardsHelper
+end

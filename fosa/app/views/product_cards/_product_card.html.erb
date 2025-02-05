@@ -1,0 +1,20 @@
+<!-- app/views/product_cards/_product_card.html.erb -->
+
+<p>
+  <strong>Title:</strong>
+  <%= product_card.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= product_card.description %>
+</p>
+
+<% if product_card.image.attached? %>
+  <p>
+    <strong>Image:</strong><br>
+    <%= image_tag product_card.image, width: 300 %>
+  </p>
+<% else %>
+  <p>No image attached</p>
+<% end %>
