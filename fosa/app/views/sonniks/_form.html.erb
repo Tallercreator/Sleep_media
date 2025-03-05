@@ -1,0 +1,32 @@
+<%= form_with(model: sonnik) do |form| %>
+  <% if sonnik.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(sonnik.errors.count, "error") %> prohibited this sonnik from being saved:</h2>
+
+      <ul>
+        <% sonnik.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :content, style: "display: block" %>
+    <%= form.textarea :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image, "Изображение" %><br>
+    <%= form.file_field :image %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

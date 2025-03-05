@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_05_054807) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_05_103049) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -46,6 +46,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_05_054807) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.integer "article_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_likes_on_article_id"
+  end
+
   create_table "product_cards", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -53,6 +60,23 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_05_054807) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sonniks", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "article_id", null: false
+    t.index ["article_id"], name: "index_tags_on_article_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "likes", "articles"
+  add_foreign_key "tags", "articles"
 end

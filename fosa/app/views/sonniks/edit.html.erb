@@ -1,0 +1,12 @@
+<% content_for :title, "Editing sonnik" %>
+
+<h1>Editing sonnik</h1>
+
+<%= render "form", sonnik: @sonnik %>
+
+<br>
+
+<div>
+  <%= link_to "Show this sonnik", @sonnik %> |
+  <%= link_to "Back to sonniks", sonniks_path %>
+</div>

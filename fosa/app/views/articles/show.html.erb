@@ -15,6 +15,24 @@
     <strong>Изображение:</strong><br>
     <%= image_tag @article.image, width: 300 %>
   </p>
+
+  <h2><%= @article.title %></h2>
+<p><%= @article.content %></p>
+
+<% if @article.tags.any? %>
+  <p><strong>Теги:</strong></p>
+  <ul>
+    <% @article.tags.each do |tag| %>
+      <li><%= tag.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>У этой статьи нет тегов.</p>
+  <p>Лайков: <%= @article.likes_count %></p>
+<% end %>
+
+
+
 <% else %>
   <p>Картинка не загружена</p>
 <% end %>

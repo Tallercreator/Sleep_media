@@ -23,6 +23,16 @@
   </head>
 
   <body>
+
+  <nav>
+    <%= link_to "На главную", root_path %>
+    <%= link_to "Статьи", articles_path %>
+    <%= link_to "Сонник", sonniks_path %>
+    <%= link_to "Товары", product_cards_path %>
+  </nav>
+
+  <hr>
+
     <%= yield %>
   </body>
 </html>
