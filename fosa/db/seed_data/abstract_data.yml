@@ -1,0 +1,25 @@
+# db/seed_data/abstract_data.yml
+
+articles:
+  - title: "Abstract Article 1"
+    content: "Lorem ipsum dolor sit amet..."
+  - title: "Abstract Article 2"
+    content: "Aliquam tincidunt mauris eu risus..."
+  - title: "Abstract Article 3"
+    content: "Vestibulum auctor dapibus neque..."
+
+product_cards:
+  - title: "Abstract Product 1"
+    description: "This is a placeholder product description."
+  - title: "Abstract Product 2"
+    description: "Another placeholder product description."
+  - title: "Abstract Product 3"
+    description: "More abstract data here..."
+
+sonniks:
+  - title: "Сон о лесу"
+    content: "Лес во сне может символизировать внутренний мир..."
+  - title: "Сон о реке"
+    content: "Река – поток жизни..."
+  - title: "Сон о доме"
+    content: "Дом во сне – это наше внутреннее «Я»..."
