@@ -68,3 +68,11 @@ class SonniksController < ApplicationController
       params.require(:sonnik).permit(:title, :content, :image)
     end    
 end
+
+class SonniksController < ApplicationController
+  def show
+    @sonnik = Sonnik.find(params[:id])
+  end
+  # ...
+end
+

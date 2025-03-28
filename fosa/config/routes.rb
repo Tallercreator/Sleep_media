@@ -6,8 +6,6 @@ Rails.application.routes.draw do
     post :like, on: :member
   end
 
-
-  resources :likes
   resources :tags
   resources :product_cards
   resources :articles

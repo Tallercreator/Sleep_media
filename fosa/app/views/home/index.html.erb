@@ -37,3 +37,21 @@
 <% else %>
   <p>Пока нет товаров.</p>
 <% end %>
+
+<h2>Сонник</h2>
+<% if @sonniks.any? %>
+  <ul>
+    <% @sonniks.each do |sonnik| %>
+      <li>
+        <strong>
+          <%= link_to sonnik.title, sonnik_path(sonnik) %>
+        </strong><br>
+        <%= truncate(sonnik.content, length: 150) %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Записей сонника пока нет</p>
+<% end %>
+
+

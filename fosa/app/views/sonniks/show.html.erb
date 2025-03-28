@@ -8,3 +8,8 @@
 
   <%= button_to "Destroy this sonnik", @sonnik, method: :delete %>
 </div>
+
+<h1><%= @sonnik.title %></h1>
+<p><%= @sonnik.content %></p>
+<p><%= link_to "Вернуться на главную", root_path %></p>
+
