@@ -25,27 +25,27 @@ articles_data = data["articles"] || []
 articles_data.each do |article_attrs|
   Article.create!(article_attrs)
 end
-puts "Создано статей: #{Article.count}"
+# puts "Создано статей: #{Article.count}"
 
-#
-# Создаём записи из data["product_cards"]
-#
-products_data = data["product_cards"] || []
-products_data.each do |p_attrs|
-  ProductCard.create!(p_attrs)
-end
-puts "Создано товаров: #{ProductCard.count}"
+# #
+# # Создаём записи из data["product_cards"]
+# #
+# products_data = data["product_cards"] || []
+# products_data.each do |p_attrs|
+#   ProductCard.create!(p_attrs)
+# end
+# puts "Создано товаров: #{ProductCard.count}"
 
-#
-# Создаём записи из data["sonniks"]
-#
-sonniks_data = data["sonniks"] || []
-sonniks_data.each do |s_attrs|
-  Sonnik.create!(s_attrs)
-end
-puts "Создано записей сонника: #{Sonnik.count}"
+# #
+# # Создаём записи из data["sonniks"]
+# #
+# sonniks_data = data["sonniks"] || []
+# sonniks_data.each do |s_attrs|
+#   Sonnik.create!(s_attrs)
+# end
+# puts "Создано записей сонника: #{Sonnik.count}"
 
-puts "=== Готово! Данные из YAML загружены. ==="
+# puts "=== Готово! Данные из YAML загружены. ==="
 
 # db/seeds.rb
 
