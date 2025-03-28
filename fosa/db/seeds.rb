@@ -1,30 +1,30 @@
 # db/seeds.rb
 
-require 'yaml'
+# require 'yaml'
 
-puts "=== Загрузка абстрактных данных из YAML ==="
+# puts "=== Загрузка абстрактных данных из YAML ==="
 
 # Путь к нашему YAML-файлу
-seed_file = Rails.root.join("db", "seed_data", "abstract_data.yml")
+# seed_file = Rails.root.join("db", "seed_data", "abstract_data.yml")
 
 # Считываем содержимое (получаем хэш вида {"articles"=> [...], "product_cards"=> [...], "sonniks"=> [...]})
-data = YAML.load_file(seed_file)
+# data = YAML.load_file(seed_file)
 
 #
 # Если вы хотите при каждом запуске сидов очищать таблицы — сделайте destroy_all:
 #
-Article.destroy_all
-ProductCard.destroy_all
-Sonnik.destroy_all
+# Article.destroy_all
+# ProductCard.destroy_all
+# Sonnik.destroy_all
 # (Аналогично, если есть другие модели, которые хотим почистить)
 
 #
 # Создаём записи из data["articles"]
 #
-articles_data = data["articles"] || []
-articles_data.each do |article_attrs|
-  Article.create!(article_attrs)
-end
+# articles_data = data["articles"] || []
+# articles_data.each do |article_attrs|
+#   Article.create!(article_attrs)
+# end
 # puts "Создано статей: #{Article.count}"
 
 # #
@@ -37,15 +37,15 @@ end
 # puts "Создано товаров: #{ProductCard.count}"
 
 # #
-# # Создаём записи из data["sonniks"]
-# #
-# sonniks_data = data["sonniks"] || []
-# sonniks_data.each do |s_attrs|
-#   Sonnik.create!(s_attrs)
-# end
-# puts "Создано записей сонника: #{Sonnik.count}"
+# Создаём записи из data["sonniks"]
+#
+sonniks_data = data["sonniks"] || []
+sonniks_data.each do |s_attrs|
+  Sonnik.create!(s_attrs)
+end
+puts "Создано записей сонника: #{Sonnik.count}"
 
-# puts "=== Готово! Данные из YAML загружены. ==="
+puts "=== Готово! Данные из YAML загружены. ==="
 
 # db/seeds.rb
 
@@ -86,4 +86,24 @@ end
 
 puts "Создано товаров: #{ProductCard.count}"
 puts "Готово!"
+
+## db/seeds.rb
+
+require "yaml"
+
+puts "Загрузка записей сонника из YAML..."
+
+sonnik_file = Rails.root.join("db", "sonniks.yml")
+data = YAML.load_file(sonnik_file)  # <-- ВАЖНО: здесь мы объявляем переменную data
+
+Sonnik.destroy_all
+
+sonniks_data = data["sonniks"] || []
+sonniks_data.each do |attrs|
+  Sonnik.create!(attrs)
+end
+
+puts "Создано записей сонника: #{Sonnik.count}"
+
+
 
