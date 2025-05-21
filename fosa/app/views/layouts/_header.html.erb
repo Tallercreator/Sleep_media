@@ -1,0 +1,13 @@
+<header class="bg-white/80 backdrop-blur-md fixed top-0 inset-x-0 z-50">
+  <div class="container mx-auto px-6 lg:px-0 py-4 flex items-center justify-between">
+    <%= link_to "Fossleep", root_path, class: "font-serif text-2xl text-gray-800" %>
+    <nav class="space-x-6 text-sm uppercase">
+      <%= link_to "Блог", articles_path, class: "hover:text-teal-600 transition" %>
+      <%= link_to "Сонник", sonniks_path, class: "hover:text-teal-600 transition" %>
+      <%= link_to "Магазин", product_cards_path, class: "hover:text-teal-600 transition" %>
+      <%= link_to "Памятки", tags_path, class: "hover:text-teal-600 transition" %>
+      <%= link_to "Контакты", contacts_path, class: "hover:text-teal-600 transition" %>
+      <%= link_to "Соцсети", socials_path, class: "hover:text-teal-600 transition" %>
+    </nav>
+  </div>
+</header>

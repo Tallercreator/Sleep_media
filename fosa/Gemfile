@@ -65,3 +65,5 @@ gem "thruster", require: false
 # gem "bootstrap", "~> 5.2.3"
 # gem "sassc-rails"
 
+
+gem "tailwindcss-rails", "~> 4.2"

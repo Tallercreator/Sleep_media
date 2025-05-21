@@ -1,57 +1,17 @@
-<h1>Добро пожаловать в Sleep Media!</h1>
+<section class="mb-12">
+  <h2 class="text-3xl font-semibold mb-2">Добро пожаловать в Sleep Media!</h2>
+  <p>На этой странице мы можем увидеть последние статьи и карточки товаров.</p>
+</section>
 
-<p>На этой странице мы можем увидеть последние статьи и карточки товаров.</p>
+<section class="mb-12">
+  <h3 class="text-2xl font-semibold mb-4">Статьи</h3>
+  <%= render "articles/cards", articles: @articles %>
+  <div class="mt-4">
+    <%= link_to "Все статьи", articles_path, class: "text-teal-600 hover:underline" %>
+  </div>
+</section>
 
-<hr>
-
-<h2>Статьи</h2>
-<% if @articles.any? %>
-  <ul>
-    <% @articles.each do |article| %>
-      <li>
-        <strong><%= link_to article.title, article_path(article) %></strong>
-        <br>
-        <%= truncate(article.content, length: 100) %>
-      </li>
-    <% end %>
-  </ul>
-  <%= link_to "Все статьи", articles_path %>
-<% else %>
-  <p>Пока нет статей.</p>
-<% end %>
-
-<hr>
-
-<h2>Товары</h2>
-<% if @product_cards.any? %>
-  <ul>
-    <% @product_cards.each do |product_card| %>
-      <li>
-        <strong><%= link_to product_card.title, product_card_path(product_card) %></strong>
-        <br>
-        <%= truncate(product_card.description, length: 100) %>
-      </li>
-    <% end %>
-  </ul>
-  <%= link_to "Все товары", product_cards_path %>
-<% else %>
-  <p>Пока нет товаров.</p>
-<% end %>
-
-<h2>Сонник</h2>
-<% if @sonniks.any? %>
-  <ul>
-    <% @sonniks.each do |sonnik| %>
-      <li>
-        <strong>
-          <%= link_to sonnik.title, sonnik_path(sonnik) %>
-        </strong><br>
-        <%= truncate(sonnik.content, length: 150) %>
-      </li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>Записей сонника пока нет</p>
-<% end %>
-
-
+<section>
+  <h3 class="text-2xl font-semibold mb-4">Товары</h3>
+  <%= render "product_cards/cards", products: @products %>
+</section>

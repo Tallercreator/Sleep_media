@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+/* кастомный фон и водяной знак для hero */
+.hero {
+    @apply relative h-screen bg-center bg-cover;
+    background-image: url('/assets/hero-bg.jpg');
+  }
+  .hero::before {
+    /* полупрозрачный белый оверлей, чтобы текст читался */
+    content: '';
+    @apply absolute inset-0 bg-white/70;
+  }
+  .hero__watermark {
+    @apply absolute inset-0 flex items-center justify-center pointer-events-none;
+  }
+  .hero__watermark span {
+    /* огромный бледный логотип-водяной знак */
+    @apply text-[12rem] font-thin text-gray-200 opacity-20;
+  }
+  
